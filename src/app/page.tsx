@@ -1,65 +1,168 @@
-import Image from "next/image";
+"use client"
 
-export default function Home() {
+import Image from "next/image"
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main className="bg-[#0f172a] text-white font-sans">
+
+      {/* Hero */}
+      <section className="relative min-h-[85vh] flex items-center justify-center text-center px-6 overflow-hidden">
+
+        {/* Background Image */}
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src='/utama.jpg'
+          alt="office"
+          fill
           priority
+          className="object-cover"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        {/* Content */}
+        <div className="relative max-w-3xl">
+          <h2 className="text-5xl font-bold leading-tight mb-6">
+            Yamaha Motorcycles 
+          </h2>
+
+          <p className="text-lg text-white/90 mb-8">
+            Mengungkapkan keinginan Yamaha untuk membawa KANDO kepada pelanggan dan “menggeber hati mereka” melalui banyak produk inovatif dan KANDO Creating yang kita lakukan
           </p>
+
+          {/* <div className="flex justify-center gap-4">
+            <button className="bg-white text-black px-6 py-3 rounded-full font-medium hover:scale-105 transition">
+              Get Started
+            </button>
+
+            <button className="border border-white px-6 py-3 rounded-full hover:bg-white hover:text-black transition">
+              Learn More
+            </button>
+          </div> */}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+
+      </section>
+
+
+      {/* Company Overview */}
+      <section className="py-24 px-10 max-w-6xl mx-auto">
+
+        <div className="grid md:grid-cols-2 gap-14 items-center">
+
+          <div>
+            <h2 className="text-3xl font-bold mb-6">
+              Company Overview
+            </h2>
+
+            <p className="text-gray-300 leading-relaxed">
+              perusahaan global yang bergerak di bidang manufaktur sepeda motor dan produk mobilitas. Dikenal dengan inovasi teknologi, kualitas tinggi, dan desain yang dinamis, Yamaha terus menghadirkan produk yang memberikan pengalaman berkendara yang andal dan menyenangkan bagi masyarakat di seluruh dunia.
+            </p>
+          </div>
+
+          {/* Image instead of gradient */}
+          <div className="relative h-64 rounded-3xl overflow-hidden shadow-xl">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/company1.webp"
+              alt="team meeting"
+              fill
+              className="object-cover"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+
         </div>
-      </main>
-    </div>
-  );
+
+      </section>
+
+
+      {/* Products / Services */}
+      <section className="py-24 px-10 bg-[#020617]">
+
+        <div className="max-w-6xl mx-auto">
+
+          <h2 className="text-3xl font-bold mb-12 text-center">
+            Our Products
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+
+            <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:scale-105 transition">
+              <h3 className="text-xl font-semibold mb-4">Matic</h3>
+              <p className="text-gray-300 text-sm mb-6">
+                Motor matic Yamaha (skuter otomatis) adalah jenis sepeda motor yang menggunakan transmisi otomatis (CVT) sehingga pengendara tidak perlu mengoper gigi secara manual. Motor ini dirancang untuk memberikan kemudahan, kenyamanan, dan efisiensi bahan bakar, sehingga sangat populer untuk penggunaan sehari-hari di perkotaan.
+              </p>
+              <button className="text-blue-400 text-sm hover:underline">
+                Learn More →
+              </button>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:scale-105 transition">
+              <h3 className="text-xl font-semibold mb-4">Sport</h3>
+              <p className="text-gray-300 text-sm mb-6">
+                Motor sport Yamaha adalah jenis sepeda motor yang dirancang dengan fokus pada performa, kecepatan, dan desain sporty. Motor ini biasanya menggunakan transmisi manual, mesin berkapasitas lebih besar dibanding motor harian biasa, serta memiliki posisi berkendara yang memberikan kontrol lebih baik saat melaju dengan kecepatan tinggi.
+              </p>
+              <button className="text-blue-400 text-sm hover:underline">
+                Learn More →
+              </button>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:scale-105 transition">
+              <h3 className="text-xl font-semibold mb-4">Offroad</h3>
+              <p className="text-gray-300 text-sm mb-6">
+                Motor off-road Yamaha adalah jenis sepeda motor yang dirancang khusus untuk digunakan di medan yang tidak rata seperti tanah, pasir, lumpur, atau jalur pegunungan. Motor ini memiliki struktur yang kuat, suspensi panjang, dan ban khusus yang memungkinkan pengendara melewati berbagai kondisi jalan yang menantang.
+              </p>
+              <button className="text-blue-400 text-sm hover:underline">
+                Learn More →
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* Testimonials */}
+      <section className="py-24 px-10 max-w-6xl mx-auto">
+
+        <h2 className="text-3xl font-bold mb-12 text-center">
+          What Our Clients Say
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-8">
+
+          <div className="bg-white/5 p-8 rounded-2xl border border-white/10">
+            <p className="text-gray-300 text-sm">
+              1. ⭐⭐⭐⭐⭐
+ <br />Motor dari Yamaha Motor dikenal memiliki performa mesin yang kuat dan responsif. Desainnya juga modern dan sporty sehingga cocok untuk penggunaan sehari-hari maupun perjalanan jauh.
+            </p>
+          </div>
+
+          <div className="bg-white/5 p-8 rounded-2xl border border-white/10">
+            <p className="text-gray-300 text-sm">
+              2. ⭐⭐⭐⭐☆
+<br />Saya sangat puas dengan kualitas motor Yamaha Motor. Konsumsi bahan bakarnya cukup irit dan fitur yang diberikan cukup lengkap dibandingkan dengan motor di kelasnya.
+            </p>
+          </div>
+
+          <div className="bg-white/5 p-8 rounded-2xl border border-white/10">
+            <p className="text-gray-300 text-sm">
+              3. ⭐⭐⭐⭐⭐
+<br />Pengalaman menggunakan motor dari Yamaha Motor sangat nyaman. Handling stabil, mesin halus, serta perawatannya relatif mudah karena jaringan servisnya luas.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 text-center py-8 text-gray-400 text-sm">
+        "SEMAKIN DI DEPAN"
+      </footer>
+
+    </main>
+  )
 }
