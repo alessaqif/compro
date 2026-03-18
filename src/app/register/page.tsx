@@ -15,24 +15,24 @@ export default function RegisterPage() {
   const router = useRouter();
 
   const handleRegister = async (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const user = new Backendless.User();
+  try {
+    const user = new Backendless.User() as any; // ✅ FIX
 
-      user.name = name; // 🔥 simpan name
-      user.username = username;
-      user.email = email;
-      user.password = password;
+    user.name = name;
+    user.username = username;
+    user.email = email;
+    user.password = password;
 
-      await Backendless.UserService.register(user);
+    await Backendless.UserService.register(user);
 
-      alert("Register berhasil!");
-      router.push("/login");
-    } catch (err: any) {
-      alert(err.message);
-    }
-  };
+    alert("Register berhasil!");
+    router.push("/login");
+  } catch (err: any) {
+    alert(err.message);
+  }
+};
 
   return (
     <main className="min-h-screen flex">
